@@ -29,6 +29,12 @@ app.get("/contact", (req, res) => {
 app.get("/", (req, res) => {
   res.render("index");
 });
+app.get("*", (req, res) => {
+  res.render("404page",{
+    errorMsg:"Opps! Page Not Found."
+  });
+});
+
 
 app.listen(port, () => {
   console.log(`Port Listing at ${port}`);
